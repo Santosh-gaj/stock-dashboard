@@ -13,13 +13,14 @@ npm install
 ng2-chart
 
 ## Configure the API Key
+
 https://twelvedata.com 
 
 Then, open the file:
 src/environments/environment.ts
 
 And replace the apiKey value with your own: 
- apiKey: 'YOUR_TWELVE_DATA_API_KEY'
+apiKey: 'TWELVEDATA_API_KEY'
 
 ## Run the app
 
