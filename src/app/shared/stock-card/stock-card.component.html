@@ -1,0 +1,40 @@
+<div class="grid grid-cols-1 sm:grid-cols-5 gap-4 items-center p-4 bg-white rounded shadow-sm border border-gray-200">
+    <!-- Symbol -->
+    <div class="font-medium text-gray-800 sm:text-sm">
+      {{ ticker }}
+    </div>
+  
+    <!-- Company -->
+    <div class="text-gray-600 sm:text-sm">
+      {{ companyName }}
+    </div>
+  
+    <!-- Price -->
+    <div class="text-gray-700 sm:text-sm">
+      {{ currentPrice | currency:'USD' }}
+    </div>
+  
+    <!-- Change -->
+    <div [ngClass]="changeClass" class="sm:text-sm">
+      {{ priceChange | number: '1.2-2' }}%
+    </div>
+  
+    <!-- Actions -->
+    <div class="flex flex-wrap sm:justify-end gap-2 sm:text-sm">
+      <button *ngIf="!isInWatchlist"
+              (click)="addToWatchlist()"
+              class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition">
+        ➕ Add
+      </button>
+  
+      <span *ngIf="isInWatchlist" class="text-green-600 font-medium">
+        ✅ Added
+      </span>
+  
+      <button (click)="goToChart()"
+              class="bg-gray-100 text-gray-800 px-3 py-1 rounded hover:bg-gray-200 transition">
+        📊 Chart
+      </button>
+    </div>
+  </div>
+  

@@ -1,0 +1,42 @@
+<div class="p-5 bg-gray-50 min-h-screen">
+    <!-- Page Header -->
+    <header class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+      <h1 class="text-2xl sm:text-3xl font-bold text-gray-800">📈 Stock Dashboard</h1>
+      <a routerLink="/watchlist"
+         class="text-blue-600 hover:underline font-medium text-base sm:text-lg">
+        Go to Watchlist →
+      </a>
+    </header>
+  
+    <!-- Loader -->
+    <div *ngIf="loading" class="text-center text-gray-600 text-lg">
+      🔄 Loading stocks...
+    </div>
+  
+    <!-- Error Message -->
+    <div *ngIf="!loading && loadingError" class="text-red-700 bg-red-100 border border-red-200 p-4 rounded mb-4 text-center">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Table Header (only shows on larger screens) -->
+    <div *ngIf="!loading && !loadingError && stocks.length"
+         class="hidden sm:grid sm:grid-cols-5 items-center p-3 bg-sky-100 shadow-sm rounded font-semibold text-sky-800 text-sm mb-2">
+      <div>Symbol</div>
+      <div>Company</div>
+      <div>Price</div>
+      <div>Change</div>
+      <div>Action</div>
+    </div>
+  
+    <!-- Stock Cards -->
+    <section *ngIf="!loading && !loadingError && stocks.length"
+             class="flex flex-col gap-3">
+      <app-stock-card *ngFor="let stock of stocks"
+                      [ticker]="stock.ticker"
+                      [companyName]="stock.companyName"
+                      [currentPrice]="stock.currentPrice"
+                      [priceChange]="stock.priceChange">
+      </app-stock-card>
+    </section>
+  </div>
+  

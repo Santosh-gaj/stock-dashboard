@@ -1,0 +1,21 @@
+<div class="p-6 bg-gray-50 min-h-screen">
+  <h2 class="text-2xl font-bold text-sky-800 mb-6">📋 Your Watchlist</h2>
+
+  <ul class="space-y-4">
+    <li *ngFor="let stock of watchlist()" class="p-4 bg-white shadow rounded flex justify-between items-center">
+      <div>
+        <div class="text-lg font-semibold text-gray-800">
+          {{ stock.companyName }} <span class="text-gray-500">({{ stock.ticker  }})</span>
+        </div>
+        <div class="text-gray-700">{{ stock.currentPrice | currency:'USD' }}</div>
+      </div>
+      <button class="px-3 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600" (click)="remove(stock.ticker)">
+        Remove
+      </button>
+    </li>
+  </ul>
+
+  <a routerLink="/" class="inline-block mt-8 text-blue-600 hover:underline font-medium">
+    ← Back to Dashboard
+  </a>
+</div>

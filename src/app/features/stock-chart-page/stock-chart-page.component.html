@@ -1,0 +1,16 @@
+<div class="p-6">
+    <h2 class="text-2xl font-bold mb-4">Chart for {{ ticker }}</h2>
+
+    <div class="mb-4 space-x-2">
+        <button *ngFor="let range of ranges"
+            class="px-3 py-1 rounded border border-blue-500 text-blue-500 hover:bg-blue-100" [ngClass]="{
+    'bg-blue-500 text-white': selectedRange === range,
+    'text-blue-500': selectedRange !== range
+  }" (click)="loadChartData(range)">
+            {{ range }}
+        </button>
+    </div>
+
+    <app-stock-chart *ngIf="historicalData.length && showChart" [ticker]="ticker"
+        [historicalData]="historicalData"></app-stock-chart>
+</div>

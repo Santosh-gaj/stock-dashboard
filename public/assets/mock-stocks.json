@@ -1,0 +1,20 @@
+[
+  {
+    "ticker": "AAPL",
+    "companyName": "Apple Inc.",
+    "currentPrice": 195.12,
+    "priceChange": 1.25
+  },
+  {
+    "ticker": "GOOGL",
+    "companyName": "Alphabet Inc.",
+    "currentPrice": 2810.45,
+    "priceChange": -0.75
+  },
+  {
+    "ticker": "MSFT",
+    "companyName": "Microsoft Corp.",
+    "currentPrice": 335.67,
+    "priceChange": 0.42
+  }
+]

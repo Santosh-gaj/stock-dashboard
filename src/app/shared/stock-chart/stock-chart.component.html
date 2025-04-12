@@ -1,0 +1,12 @@
+<div class="p-6 bg-white rounded shadow">
+    <h2 class="text-xl font-bold mb-4 text-blue-700">
+        📊 Historical Chart for {{ ticker }}
+    </h2>
+
+    <div *ngIf="loading" class="chart-loader">
+        <p>📈 Loading chart...</p>
+    </div>
+
+    <canvas *ngIf="!loading" baseChart [data]="lineChartData" [type]="'line'">
+    </canvas>
+</div>

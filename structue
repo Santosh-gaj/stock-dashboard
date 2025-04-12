@@ -1,0 +1,41 @@
+src/
+│
+├── app/
+│   ├── core/                        # Core: API services, interceptors
+│   │   ├── services/
+│   │   │   ├── stock.service.ts          # API integration (price & history)
+│   │   │   ├── websocket.service.ts      # Real-time updates (WebSocket/polling)
+│   │   │   └── storage.service.ts        # Local storage for watchlist
+│   │   └── interceptors/
+│   │       └── http-error.interceptor.ts # Global error interceptor
+│
+│   ├── shared/                      # Shared UI components
+│   │   ├── stock-card/
+│   │   │   └── stock-card.component.ts   # Standalone
+│   │   └── stock-chart/
+│   │       └── stock-chart.component.ts # Chart.js with standalone
+│
+│   ├── features/
+│   │   ├── dashboard/
+│   │   │   └── dashboard.component.ts    # Standalone dashboard
+│   │   ├── watchlist/
+│   │   │   └── watchlist.component.ts    # Standalone watchlist
+│   │   └── stock-chart-page/
+│   │       └── stock-chart-page.component.ts    # Standalone watchlist
+│
+│   ├── state/                      # Optional Signals or RxJS based state
+│   │   ├── stock.signal.ts              # Signals for stock data
+│   │   └── watchlist.signal.ts          # Watchlist state as Signal
+│
+│   ├── app.config.ts               # Angular 18 config-based bootstrap
+│   └── main.ts                     # Bootstrap with `provideRouter`
+│
+├── environments/
+│   ├── environment.ts
+│   └── environment.prod.ts
+│
+└── index.html
+
+
+
+Api key: 1186384f67e244e095700da4bf669340
